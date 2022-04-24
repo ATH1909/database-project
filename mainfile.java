@@ -187,7 +187,66 @@ public class mainfile
 	}
 	public static void manage_passengers()
 	{
-
+		Scanner userinput = new Scanner(System.in);
+		String chosenoption;
+		while(true)
+		{
+			//display Passenger
+			System.out.println("1. Add Passsenger");
+			System.out.println("2. Edit Passenger");
+			System.out.println("3. Remove Passenger");
+			System.out.println("4. Back");
+			chosenoption = userinput.nextLine();
+			if(chosenoption[0] == '1')
+			{
+				System.out.println("Enter passenger ID:");
+				String passengerid = userinput.nextLine();
+				System.out.println("Enter passenger first name:");
+				String firstname = userinput.nextLine();
+				System.out.println("Enter passenger last name (can be blank):");
+				String lastname = userinput.nextLine();
+				System.out.println("Enter destination station ID:");
+				String destinationstation = userinput.nextLine();
+				System.out.println("Enter starting station ID:");
+				String startingstation = userinput.nextLine();
+				if(true) //passenger can be successfully added to Passenger and WaitingInStation
+				{
+					//add passenger to Passenger and WaitingInStation
+					System.out.println("Passenger created successfully.");
+				}
+				else //passenger can't successfully be added to Passenger, due to, say, their referenced station IDs not matching existing station IDs
+				{
+					System.out.println("Passenger could not be created successfully. Check for invalid data.");
+				}
+			}
+			else if(chosenoption[0] == '2')
+			{
+				//incomplete
+			}
+			else if(chosenoption[0] == '3')
+			{
+				System.out.println("Enter passenger ID:");
+				chosenoption = userinput.nextLine();
+				if(true) //a passenger with that ID exists
+				{
+					//incomplete
+				}
+				else
+				{
+					System.out.println("No passenger with that ID found.");
+				}
+			}
+			else if(chosenoption[0] == '4')
+			{
+				System.out.println("Returning to main menu...");
+				userinput.close();
+				return;
+			}
+			else
+			{
+				System.out.println("Invalid response.");
+			}
+		}
 	}
 	public static void manage_trains()
 	{
